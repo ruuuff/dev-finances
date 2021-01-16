@@ -1,5 +1,5 @@
 ## ⚙️ Projeto
-**dev.finance$** é uma ferramenta para controle financeiro, podendo gerenciar entrada de dinheiro e gastos. Foi desenvolvido durante o evento **Maratona Discover** da **Rocketseat**. ❤️
+**dev.finance$** é uma ferramenta para controle financeiro, podendo gerenciar entrada e saída do seu precioso dinheiro. Foi desenvolvido durante o evento **Maratona Discover** da **Rocketseat**. ❤️
 
 ## ✈️ Tecnologias
 - HTML

@@ -151,8 +151,11 @@ header #logo {
 
 /* ===== TABLE ===== */
 #transaction {
-  display: block;
   width: 100%;
+}
+
+.table-container {
+  display: block;
   overflow-x: auto; /* habilita rolagem no eixo x quando necessário (quando estiver no mobile, por exemplo) */
 }
 

@@ -155,7 +155,6 @@ header #logo {
 }
 
 .table-container {
-  display: block;
   overflow-x: auto; /* habilita rolagem no eixo x quando necessário (quando estiver no mobile, por exemplo) */
 }
 
@@ -278,8 +277,8 @@ footer {
 }
 
 
-/* ===== RESPONSIVO =====*/
-/* a partir do width de 800px, ele aplica (a largura mínima da tela precisa ser de 800px para poder aplicar os estilos)*/
+/* ===== RESPONSIVO ===== */
+/* a partir do width de 800px, ele aplica (a largura mínima da tela precisa ser de 800px para poder aplicar os estilos) */
 @media (min-width: 800px) {
   html {
     font-size: 87.5%; /* (100 * 14) / 16 = 85.5 (14px) ||| 100% = 16px (padrão do navegador) */

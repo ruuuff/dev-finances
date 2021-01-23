@@ -48,7 +48,7 @@
     <section id="transaction">
       <h2 class="sr-only">Transações</h2>
       
-      <a class="button new" href="#" onclick="Modal.open()">+ Nova Transação</a>
+      <a class="button new" href="#" onclick="Modal.open(event)">+ Nova Transação</a>
       
       <div class="table-container">
         <table id="data-table">
@@ -134,7 +134,7 @@
           </div>
           
           <div class="input-group actions">
-            <a href="#" class="button cancel" onclick="Modal.close()">Cancelar</a>
+            <a href="#" class="button cancel" onclick="Modal.close(event)">Cancelar</a>
             <button>Salvar</button>
           </div>
         </form>

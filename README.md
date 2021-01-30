@@ -8,6 +8,6 @@
 
 ## 🖥️ Resultado
 <div align="center">
-  <img alt="Image dev.finances" src="" width="450px">
+  <img alt="Image dev.finances" src="https://i.imgur.com/f7I7eTh.png" width="450px">
   <p>Confira o resultado: <a href="https://dev-finances-ruuuff.netlify.app">dev-finances-ruuuff</a></p>
 </div>

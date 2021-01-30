@@ -132,7 +132,6 @@ header #logo {
 .card h3 {
   font-weight: 400;
   font-size: 1rem;
-  
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -142,11 +141,16 @@ header #logo {
   font-size: 2rem;
   line-height: 3rem;
   margin-top: 1rem;
+  overflow-x: auto;
 }
 
 .card.total {
   background: var(--green);
   color: #fff;
+}
+
+.card.total.red {
+  background-color: var(--red);
 }
 
 /* ===== TABLE ===== */
@@ -237,7 +241,7 @@ footer {
 .modal {
   background-color: #f0f2f5;
   padding: 2.4rem;
-  width: min(90vw, calc(500px + 2.4rem)); /* ler a linha 25 */
+  width: min(90vw, calc(500px + 2.4rem)); /* ler a linha 28 */
   z-index: 1;
 }
 
@@ -261,7 +265,7 @@ footer {
   width: 100%;
 }
 
-.input-group small {
+.input-group .help {
   opacity: 0.4;
 }
 

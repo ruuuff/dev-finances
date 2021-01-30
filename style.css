@@ -147,6 +147,7 @@ header #logo {
 .card.total {
   background: var(--green);
   color: #fff;
+  transition: background 0.2s linear;
 }
 
 .card.total.red {

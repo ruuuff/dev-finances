@@ -383,6 +383,7 @@ footer {
   opacity: 1;
 }
 
+/* ===== Container e itens do Menu ===== */
 .menu {
   background: var(--body-bg);
   width: min(90vw, 400px);
@@ -390,7 +391,8 @@ footer {
   border-radius: 8px;
   text-align: center;
   position: relative;
-  transition: var(--theme-delay) linear;
+  transition: background var(--theme-delay) linear;
+  box-shadow: 0 5px 8px rgba(0,0,0,0.6);
 }
 
 .menu h2 {
@@ -419,7 +421,8 @@ footer {
   color: var(--dark-blue);
   font-weight: 600;
   text-transform: uppercase;
-  padding: 0.75rem 0;
+  padding: 1rem 0;
+  letter-spacing: 0.05rem;
   border-radius: 8px;
   width: 100%;
   display: inline-flex;
@@ -438,16 +441,28 @@ footer {
   border-bottom: 1px dashed var(--dark-blue);
   line-height: 1rem;
   transition: border-bottom var(--theme-delay) linear;
+  z-index: 1;
 }
 
 .menu li a i {
   position: absolute;
   left: auto;
   top: 50%;
-  opacity: 0.1;
   font-size: 3rem;
+  opacity: 0.15;
   transform: translate(-50%, -50%) rotate(9deg);
+  z-index: -1;
 } 
+
+.menu li a i.fa-sun {
+  opacity: 0.25;
+  color: orange;
+}
+
+.menu li a i.fa-moon {
+  opacity: 0.25;
+  color: black;
+}
 
 .menu .close-menu {
   position: absolute;
@@ -461,7 +476,6 @@ footer {
   cursor: pointer;
   transition: var(--theme-delay) linear;
 }
-
 
 /* ===== RESPONSIVO ===== */
 /* a partir do width de 800px, ele aplica (a largura mínima da tela precisa ser de 800px para poder aplicar os estilos) */

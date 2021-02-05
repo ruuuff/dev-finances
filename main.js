@@ -1,10 +1,12 @@
 const Modal = {
   toggle(event) {
     event.preventDefault() // Para a página não subir ao clicar no link (que leva até o "#")
-    document
-      .querySelector('.modal-overlay')
-      .classList
-      .toggle('active')
+    const modal = document.querySelector('.modal-overlay')
+    modal.classList.toggle('active')
+      
+    if(modal.classList.contains('active')) {
+      Form.autoValueDate()
+    }
   }
 }
 
@@ -133,8 +135,10 @@ const DOM = {
   
   toggleMenu(event) {
     event.preventDefault
-    const menu = document.querySelector('.menu-overlay')
-    menu.classList.toggle('active')
+    document
+      .querySelector('.menu-overlay')
+      .classList
+      .toggle('active')
   },
   
   changeTheme(event) {
@@ -145,9 +149,9 @@ const DOM = {
     html.classList.toggle('dark')
     
     if(html.classList.contains('dark')) {
-      themeBtn.innerHTML = "<span>Dark<i class='far fa-moon'></i></span>"
+      themeBtn.innerHTML = "<span>Dark Mode<i class='far fa-moon'></i></span>"
     } else {
-      themeBtn.innerHTML = "<span>Light<i class='far fa-sun'></i></span>"
+      themeBtn.innerHTML = "<span>Light Mode<i class='far fa-sun'></i></span>"
     }
   }
 }
@@ -243,6 +247,20 @@ const Form = {
     } catch (error) {
       alert(error.message)
     }
+  },
+  
+  /* ===== Incremento ===== */
+  autoValueDate() {
+    const date = new Date()
+    
+    let day = date.getDate()
+    let month = date.getMonth() + 1
+    const year = date.getFullYear()
+    
+    day < 9 ? day = '0' + day : day
+    month < 9 ? month = '0' + month : month
+    
+    Form.date.value = `${year}-${month}-${day}`
   }
 }
 

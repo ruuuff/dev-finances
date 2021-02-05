@@ -1,16 +1,33 @@
 /* ===== FONTE ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,700;1,100;1,400;1,600;1,700&display=swap');
 
 /* ===== GLOBAL ===== */
 :root {
+  /* ===== Font Colors ===== */
   --dark-blue: #363f5f;
   --green: #49aa26;
   --light-green: #3dd705;
   --red: #e92929;
+  --table-color: #969cb3;
+  /* ===== Theme ===== */
+  --body-bg: #f0f2f5;
+  --card-bg: #fff;
+  /* ===== Transition Delays ===== */
+  --nav-delay: 0.2s;
+  --theme-delay: 0.2s;
 }
 
 html {
-  font-size: 92.75%; /* 100% de fonte = 16px (padrão do navegador) ||| Então para ser 15px: (100 * 15) / 16 = 92.75 */
+  font-size: 93.75%; /* 100% de fonte = 16px (padrão do navegador) ||| Então para ser 15px: (100 * 15) / 16 = 93.75 */
+}
+
+html.dark {
+  /* ===== Theme ===== */
+  --body-bg: #222;
+  --card-bg: #555;
+  /* ===== Fontes ===== */
+  --dark-blue: #f0f2f5;
 }
 
 * {
@@ -20,8 +37,9 @@ html {
 }
 
 body {
-  background: #f0f2f5;
+  background: var(--body-bg);
   font-family: 'Poppins', sans-serif;
+  transition: var(--theme-delay) linear;
 }
 
 .container {
@@ -40,6 +58,11 @@ body {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* ===== Global Elements ===== */
+ul {
+  list-style: none;
 }
 
 /* ===== Links & Buttons ===== */
@@ -96,17 +119,73 @@ h2 {
   font-weight: 400;
 }
 
+/* ===== NAV =====*/
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transition: var(--nav-delay) linear;
+}
+
+nav.active {
+  background: #2d4a22f9;
+}
+
+nav img {
+  height: 1.25rem;
+  margin: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--nav-delay) linear;
+}
+
+nav.active img {
+  opacity: 1;
+  visibility: visible;
+}
+
+nav li a {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+nav li a:hover {
+  color: #fff;
+}
+
+nav li a span {
+  display: inline-block;
+  font-weight: 700;
+}
+
+nav li a span:first-child {
+  margin-right: 0.45rem;
+  display: none;
+}
+
 /* ===== HEADER ===== */
 header {
   background: #2d4a22;
-  padding: 2rem 0 10rem;
+  padding: 4rem 0 11rem;
   text-align: center;
 }
 
-header #logo {
-  color: #fff;
-  font-weight: 100;
-  /*text-transform: uppercase;*/
+header img {
+  visibility: visible;
+  opacity: 1;
+  transition: var(--nav-delay) linear var(--nav-delay);
+}
+
+header img.hide {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* ===== BALANCE ===== */
@@ -121,12 +200,13 @@ header #logo {
 
 /* ===== CARDS ===== */
 .card {
-  background: #fff;
+  background: var(--card-bg);
   padding: 1.5rem 2rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
   color: var(--dark-blue);
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  transition: var(--theme-delay) linear;
 }
 
 .card h3 {
@@ -166,14 +246,15 @@ header #logo {
 #data-table {
   width: 100%;
   border-spacing: 0 0.5rem; /* eixo vertical / horizontal */
-  color: #969cb3;
+  color: var(--table-color);
 }
 
 table thead th {
-  background: #fff;
+  background: var(--card-bg);
   font-weight: 400;
   padding: 1rem 2rem;
   text-align: left;
+  transition: var(--theme-delay) linear;
 }
 
 table tbody tr {
@@ -185,7 +266,7 @@ table tbody tr:hover {
 }
 
 table tbody td {
-  background: #fff;
+  background: var(--card-bg);
   padding: 1rem 2rem;
 }
 
@@ -240,8 +321,9 @@ footer {
 }
 
 .modal {
-  background-color: #f0f2f5;
+  background-color: var(--body-bg);
   padding: 2.4rem;
+  border-radius: 8px;
   width: min(90vw, calc(500px + 2.4rem)); /* ler a linha 28 */
   z-index: 1;
 }
@@ -267,7 +349,7 @@ footer {
 }
 
 .input-group .help {
-  opacity: 0.4;
+  color: var(--table-color);
 }
 
 .input-group.actions {
@@ -281,12 +363,115 @@ footer {
   width: 48%;
 }
 
+/* ===== Modal do Menu =====*/
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.7);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.menu-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu {
+  background: var(--body-bg);
+  width: min(90vw, 400px);
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+  transition: var(--theme-delay) linear;
+}
+
+.menu h2 {
+  margin: 0 0 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.menu .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--card-bg);
+  border-radius: 2px;
+  transition: var(--theme-delay) linear;
+}
+
+.menu ul {
+  margin-top: 2rem;
+}
+
+.menu ul li ~ li {
+  margin-top: 0.5rem;
+}
+
+.menu li a {
+  color: var(--dark-blue);
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.75rem 0;
+  border-radius: 8px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s linear;
+  overflow: hidden;
+}
+
+.menu li a:hover {
+  background: var(--card-bg);
+}
+
+.menu li a span {
+  position: relative;
+  border-bottom: 1px dashed var(--dark-blue);
+  line-height: 1rem;
+  transition: border-bottom var(--theme-delay) linear;
+}
+
+.menu li a i {
+  position: absolute;
+  left: auto;
+  top: 50%;
+  opacity: 0.1;
+  font-size: 3rem;
+  transform: translate(-50%, -50%) rotate(9deg);
+} 
+
+.menu .close-menu {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: var(--dark-blue);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--theme-delay) linear;
+}
+
 
 /* ===== RESPONSIVO ===== */
 /* a partir do width de 800px, ele aplica (a largura mínima da tela precisa ser de 800px para poder aplicar os estilos) */
 @media (min-width: 800px) {
   html {
     font-size: 87.5%; /* (100 * 14) / 16 = 85.5 (14px) ||| 100% = 16px (padrão do navegador) */
+  }
+  
+  nav li a span:first-child {
+    display: inline-block;
   }
   
   #balance {

@@ -67,12 +67,6 @@ const Transaction = {
 }
 
 const DOM = {
-  totalBG(value) {
-    const totalContainer = document.querySelector('.card.total')
-    
-    value < 0 ? totalContainer.classList.add('red') : totalContainer.classList.remove('red')
-  },
-  
   transactionContainer: document.querySelector('#data-table tbody'),
   
   addTransaction(transaction, index) {
@@ -112,6 +106,49 @@ const DOM = {
   clearTransactions() {
     DOM.transactionContainer
       .innerHTML = ''
+  },
+  
+  /* ===== Incrementos ===== */
+  totalBG(value) {
+    const totalContainer = document.querySelector('.card.total')
+    
+    value < 0 ? totalContainer.classList.add('red') : totalContainer.classList.remove('red')
+  },
+  
+  navTrigger() {
+    const navEl = document.querySelector('nav')
+    const triggerEl = document.querySelector('header img')
+    
+    const navPointTrigger = navEl.getBoundingClientRect().top
+    const triggerPoint = triggerEl.getBoundingClientRect().bottom
+    
+    if(navPointTrigger > triggerPoint) {
+      navEl.classList.add('active')
+      triggerEl.classList.add('hide')
+    } else {
+      navEl.classList.remove('active')
+      triggerEl.classList.remove('hide')
+    }
+  },
+  
+  toggleMenu(event) {
+    event.preventDefault
+    const menu = document.querySelector('.menu-overlay')
+    menu.classList.toggle('active')
+  },
+  
+  changeTheme(event) {
+    event.preventDefault
+    const themeBtn = document.querySelector('.themeNow')
+    const html = document.querySelector('html')
+    
+    html.classList.toggle('dark')
+    
+    if(html.classList.contains('dark')) {
+      themeBtn.innerHTML = "<span>Dark<i class='far fa-moon'></i></span>"
+    } else {
+      themeBtn.innerHTML = "<span>Light<i class='far fa-sun'></i></span>"
+    }
   }
 }
 
@@ -226,3 +263,6 @@ const App = {
 }
 
 App.init()
+
+// Nav
+window.addEventListener('scroll', DOM.navTrigger)

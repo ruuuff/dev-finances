@@ -7,11 +7,23 @@
   
   <title>dev.finance$</title>
   
-  <!-- Custom Styles -->
+  <!--Custom Styles-->
   <link rel="stylesheet" href="./style.css">
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
 </head>
 
 <body>
+  <nav>
+    <img src="./assets/logo.svg" alt="Logo">
+    <ul>
+      <li>
+        <a onclick="DOM.toggleMenu(event)" href="#"><span>Menu</span><span class="fas fa-bars"></span></a>
+      </li>
+    </ul>
+  </nav>
+  
   <header>
     <img src="./assets/logo.svg" alt="Logo Dev Finance">
   </header>
@@ -120,6 +132,23 @@
       </div><!--#form-->
     </div><!--modal-->
   </div><!--modal-overlay-->
+  
+  <div class="menu-overlay">
+    <div class="menu">
+      <h2>Menu</h2>
+      <div class="bar"></div>
+      <ul>
+        <li><a href="https://instagram.com/ruuuff"><span>Instagram <i class="fab fa-instagram"></i></span></a></li>
+        <li>
+          <a href="https://github.com/ruuuff"><span>Github <i class="fab fa-github"></i></span></a>
+        </li>
+        <li>
+          <a onclick="DOM.changeTheme(event)" class="themeNow" href="#"><span>Light <i class="far fa-sun"></i></span></a>
+        </li>
+      </ul>
+      <div onclick="DOM.toggleMenu(event)" class="close-menu fas fa-times"></div>
+    </div>
+  </div>
   
   <script src="main.js"></script>
 </body>

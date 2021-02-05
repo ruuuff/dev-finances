@@ -19,7 +19,7 @@
     <img src="./assets/logo.svg" alt="Logo">
     <ul>
       <li>
-        <a onclick="DOM.toggleMenu(event)" href="#"><span>Menu</span><span class="fas fa-bars"></span></a>
+        <a onclick="DOM.toggleMenu(event)" href="#" rel="nofollow"><span>Menu</span><span class="fas fa-bars"></span></a>
       </li>
     </ul>
   </nav>
@@ -60,7 +60,7 @@
     <section id="transaction">
       <h2 class="sr-only">Transações</h2>
       
-      <a class="button new" href="#" onclick="Modal.toggle(event)">+ Nova Transação</a>
+      <a class="button new" href="#" onclick="Modal.toggle(event)" rel="nofollow">+ Nova Transação</a>
       
       <div class="table-container">
         <table id="data-table">
@@ -125,7 +125,7 @@
           </div>
           
           <div class="input-group actions">
-            <a href="#" class="button cancel" onclick="Modal.toggle(event)">Cancelar</a>
+            <a href="#" class="button cancel" onclick="Modal.toggle(event)" rel="nofollow">Cancelar</a>
             <button>Salvar</button>
           </div>
         </form>
@@ -138,12 +138,12 @@
       <h2>Menu</h2>
       <div class="bar"></div>
       <ul>
-        <li><a href="https://instagram.com/ruuuff" target="_blank"><span>Instagram<i class="fab fa-instagram"></i></span></a></li>
+        <li><a href="https://instagram.com/ruuuff" target="_blank" rel="nofollow"><span>Instagram<i class="fab fa-instagram"></i></span></a></li>
         <li>
-          <a href="https://github.com/ruuuff" target="_blank"><span>Github<i class="fab fa-github"></i></span></a>
+          <a href="https://github.com/ruuuff" target="_blank" rel="nofollow"><span>Github<i class="fab fa-github"></i></span></a>
         </li>
         <li>
-          <a onclick="DOM.changeTheme(event)" class="themeNow" href="#"><span>Light Mode<i class="far fa-sun"></i></span></a>
+          <a onclick="DOM.changeTheme(event)" class="themeNow" href="#" rel="nofollow"><span>Light Mode<i class="far fa-sun"></i></span></a>
         </li>
       </ul>
       <div onclick="DOM.toggleMenu(event)" class="close-menu fas fa-times"></div>

@@ -168,7 +168,7 @@ const DOM = {
   
   navTrigger() {
     const navEl = document.querySelector('nav')
-    const triggerEl = document.querySelector('header img')
+    const triggerEl = document.querySelector('header svg')
     
     const navPointTrigger = navEl.getBoundingClientRect().top
     const triggerPoint = triggerEl.getBoundingClientRect().bottom

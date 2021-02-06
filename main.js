@@ -16,6 +16,55 @@ const Storage = {
   },
   set(transactions) {
     localStorage.setItem('dev.finances:transactions', JSON.stringify(transactions))
+  },
+  
+  getTheme() {
+    return JSON.parse(localStorage.getItem('dev.finances:theme')) || 'light'
+  },
+  setTheme(theme) {
+    localStorage.setItem('dev.finances:theme', JSON.stringify(theme))
+  }
+}
+
+const Theme = {
+  html: document.querySelector('html'),
+  themeBtn: document.querySelector('.themeNow'),
+  
+  /* innerHTML do tema claro */
+  lightInner() {
+    Theme.themeBtn.innerHTML = "<span>Light Mode<i class='far fa-sun'></i></span>"
+  },
+  
+  /* innerHTML do tema escuro */
+  darkInner() {
+    Theme.themeBtn.innerHTML = "<span>Dark Mode<i class='far fa-moon'></i></span>"
+  },
+  
+  /* Click no botão do tema */
+  changeTheme(event) {
+    event.preventDefault
+    
+    Theme.html.classList.toggle('dark')
+    
+    if(Theme.html.classList.contains('dark')) {
+      Theme.darkInner()
+      Storage.setTheme('dark')
+    } else {
+      Theme.lightInner()
+      Storage.setTheme('light')
+    }
+  },
+  
+  checkStorageTheme() {
+    const theme = Storage.getTheme()
+    
+    if (theme === 'dark') {
+      Theme.html.classList.add('dark')
+      Theme.darkInner()
+    } else { 
+      Theme.html.classList.remove('dark')
+      Theme.lightInner()
+    }
   }
 }
 
@@ -139,20 +188,6 @@ const DOM = {
       .querySelector('.menu-overlay')
       .classList
       .toggle('active')
-  },
-  
-  changeTheme(event) {
-    event.preventDefault
-    const themeBtn = document.querySelector('.themeNow')
-    const html = document.querySelector('html')
-    
-    html.classList.toggle('dark')
-    
-    if(html.classList.contains('dark')) {
-      themeBtn.innerHTML = "<span>Dark Mode<i class='far fa-moon'></i></span>"
-    } else {
-      themeBtn.innerHTML = "<span>Light Mode<i class='far fa-sun'></i></span>"
-    }
   }
 }
 
@@ -272,6 +307,7 @@ const App = {
     DOM.updateBalance()
     
     Storage.set(Transaction.all)
+    Theme.checkStorageTheme()
   },
   
   reload() {

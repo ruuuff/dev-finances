@@ -20,7 +20,24 @@
   --theme-delay: 0.2s;
   
   /* ===== SVG Animation ===== */
-  --fill-animation-delay: 0.8s;
+  --fill-animation-delay: 0.4s; /* preenchimento */
+  --fill-timing-function: linear;
+  --fill-delay: 3.5s; /* tempo de espera */
+  
+  --line-animation-delay: 2s; /* linha completar a volta */
+  --line-timing-function: ease-in-out;
+  --line-i-delay: 0s;
+  --line-ii-delay: 0.15s;
+  --line-iii-delay: 0.3s;
+  --line-iv-delay: 0.45s;
+  --line-v-delay: 0.6s;
+  --line-vi-delay: 0.75s;
+  --line-vii-delay: 0.9s;
+  --line-viii-delay: 1.05s;
+  --line-ix-delay: 1.2s;
+  --line-x-delay: 1.35s;
+  --line-xi-delay: 1.5s;
+  --line-xii-delay: 1.65s;
 }
 
 html {
@@ -287,6 +304,10 @@ table tbody tr td:last-child {
   border-radius: 0 0.25rem 0.25rem 0;
 }
 
+table tbody tr td:last-child img {
+  cursor: pointer;
+}
+
 td.description {
   color: var(--dark-blue);
 }
@@ -507,75 +528,75 @@ footer {
 #logo path:nth-child(1) {
   stroke-dasharray: 102;
   stroke-dashoffset: 102;
-  animation: svg-animation 1.5s ease forwards, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-i-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(2) {
   stroke-dasharray: 92;
   stroke-dashoffset: 92;
-  animation: svg-animation 1.5s ease forwards 0.2s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-ii-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(3) {
   stroke-dasharray: 69;
   stroke-dashoffset: 69;
-  animation: svg-animation 1.5s ease forwards 0.4s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-iii-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(4) {
   /* ponto */
   stroke-dasharray: 12;
   stroke-dashoffset: 12;
-  animation: svg-animation 1.5s ease forwards 0.6s, svg-fill-green var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-iv-delay), svg-fill-green var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(5) {
   stroke-dasharray: 60;
   stroke-dashoffset: 60;
-  animation: svg-animation 1.5s ease forwards 0.8s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-v-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(6) {
   stroke-dasharray: 49;
   stroke-dashoffset: 49;
-  animation: svg-animation 1.5s ease forwards 1s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-vi-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(7) {
   stroke-dasharray: 80;
   stroke-dashoffset: 80;
-  animation: svg-animation 1.5s ease forwards 1.2s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-vii-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(8) {
   stroke-dasharray: 91;
   stroke-dashoffset: 91;
-  animation: svg-animation 1.5s ease forwards 1.4s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-viii-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(9) {
   stroke-dasharray: 80;
   stroke-dashoffset: 80;
-  animation: svg-animation 1.5s ease forwards 1.6s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-ix-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(10) {
   stroke-dasharray: 73;
   stroke-dashoffset: 73;
-  animation: svg-animation 1.5s ease forwards 1.8s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-x-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(11) {
   stroke-dasharray: 92;
   stroke-dashoffset: 92;
-  animation: svg-animation 1.5s ease forwards 2s, svg-fill-white var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-xi-delay), svg-fill-white var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 #logo path:nth-child(12) {
   /* cifrão */
   stroke-dasharray: 107;
   stroke-dashoffset: 107;
-  animation: svg-animation 1.5s ease forwards 2.2s, svg-fill-green var(--fill-animation-delay) ease forwards 3.5s;
+  animation: svg-animation var(--line-animation-delay) var(--line-timing-function) forwards var(--line-xii-delay), svg-fill-green var(--fill-animation-delay) var(--fill-timing-function) forwards var(--fill-delay);
 }
 
 @keyframes svg-animation {

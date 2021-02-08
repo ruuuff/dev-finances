@@ -20,24 +20,30 @@
   --theme-delay: 0.2s;
   
   /* ===== SVG Animation ===== */
-  --fill-animation-delay: 0.4s; /* preenchimento */
-  --fill-timing-function: linear;
-  --fill-delay: 3.5s; /* tempo de espera */
+  --line-animation-delay: 1.3s; /* linha completar a volta */
+  --line-timing-function: linear;
+  --line-delay: 0.084s;
   
-  --line-animation-delay: 2s; /* linha completar a volta */
-  --line-timing-function: ease-in-out;
+  /* delay da animação de cada letra */
   --line-i-delay: 0s;
-  --line-ii-delay: 0.15s;
-  --line-iii-delay: 0.3s;
-  --line-iv-delay: 0.45s;
-  --line-v-delay: 0.6s;
-  --line-vi-delay: 0.75s;
-  --line-vii-delay: 0.9s;
-  --line-viii-delay: 1.05s;
-  --line-ix-delay: 1.2s;
-  --line-x-delay: 1.35s;
-  --line-xi-delay: 1.5s;
-  --line-xii-delay: 1.65s;
+  --line-ii-delay: calc(var(--line-delay) * 2);
+  --line-iii-delay: calc(var(--line-delay) * 3);
+  --line-iv-delay: calc(var(--line-delay) * 4);
+  --line-v-delay: calc(var(--line-delay) * 5);
+  --line-vi-delay: calc(var(--line-delay) * 6);
+  --line-vii-delay: calc(var(--line-delay) * 7);
+  --line-viii-delay: calc(var(--line-delay) * 8);
+  --line-ix-delay: calc(var(--line-delay) * 9);
+  --line-x-delay: calc(var(--line-delay) * 10);
+  --line-xi-delay: calc(var(--line-delay) * 11);
+  --line-xii-delay: calc(var(--line-delay) * 12);
+  
+  /* delay da animação de preenchimento */
+  --fill-animation-delay: 0.4s;
+  /* função de tempo */
+  --fill-timing-function: linear;
+  /* calcula o tempo para preencher */
+  --fill-delay: calc(var(--line-xii-delay) + var(--line-animation-delay));
 }
 
 html {
@@ -291,7 +297,7 @@ table tbody tr:hover {
 
 table tbody td {
   background: var(--card-bg);
-  padding: 1rem 2rem;
+  padding: 1rem 1.3rem;
 }
 
 table thead tr th:first-child,
@@ -522,7 +528,6 @@ footer {
     gap: 2rem;
   }
 }
-
 
 /* ===== Animação do SVG ===== */
 #logo path:nth-child(1) {

@@ -1,7 +1,7 @@
 ## ⚙️ Projeto
 **dev.finance$** é uma ferramenta para controle financeiro, podendo gerenciar entrada e saída do seu precioso dinheiro. Foi desenvolvido durante o evento **Maratona Discover** da **Rocketseat**. ❤️
 
-O projeto também possui algumas incrementações feitas por mim, como um tema escuro salvo localStorage e uma logo animada com svg, além de outras pequenas modificações.
+O projeto também possui algumas incrementações feitas por mim, como um modal com **tema escuro salvo localStorage** e uma **logo animada com svg**.
 
 ## ✈️ Tecnologias
 - HTML

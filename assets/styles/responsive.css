@@ -2,7 +2,7 @@
 /* a partir do width de 800px, ele aplica (a largura mínima da tela precisa ser de 800px para poder aplicar os estilos) */
 @media (min-width: 800px) {
   html {
-    font-size: 87.5%; /* (100 * 14) / 16 = 85.5 (14px) ||| 100% = 16px (padrão do navegador) */
+    font-size: 87.5%; /* (100 * 14) / 16 = 87.5 (14px) ||| 100% = 16px (padrão do navegador) */
   }
 
   nav li a span:first-child {

@@ -6,6 +6,7 @@ const Modal = {
       
     if(modal.classList.contains('active')) {
       Form.autoValueDate()
+      Form.description.focus()
     }
   }
 }

@@ -196,8 +196,8 @@ const Utils = {
     const signal = +value < 0 ? '-' : ''
     
     // As duas barras ([/]\D[/]g (as que estão inclinadas para a direita)) definem a expressão regular
-   // "g" fala que vai fazer a pesquisa global
-   // "/D" diz para encontrar tudo que for diferente de número
+    // "g" fala que vai fazer a pesquisa global
+    // "/D" diz para encontrar tudo que for diferente de número
     value = String(value).replace(/\D/g, '')
     
     value = +value / 100

@@ -158,7 +158,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   transition: var(--nav-delay) linear;
 }
 
@@ -181,6 +181,7 @@ nav.active img {
 
 nav li a {
   color: #fff;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   padding: 0.75rem 1rem;
   cursor: pointer;
@@ -241,15 +242,12 @@ header svg.hide {
 
 .card h3 {
   font-weight: 400;
-  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .card p {
-  font-size: 2rem;
-  line-height: 3rem;
   margin-top: 1rem;
   overflow-x: auto;
 }
@@ -298,6 +296,7 @@ table tbody tr:hover {
 table tbody td {
   background: var(--card-bg);
   padding: 1rem 1.3rem;
+  transition: var(--theme-delay) linear;
 }
 
 table thead tr th:first-child,
@@ -430,6 +429,7 @@ footer {
 }
 
 .menu h2 {
+  letter-spacing: 0.1rem;
   margin: 0 0 1.5rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -472,7 +472,7 @@ footer {
 
 .menu li a span {
   position: relative;
-  border-bottom: 1px dashed var(--dark-blue);
+  border-bottom: 1px dotted var(--dark-blue);
   line-height: 1rem;
   transition: border-bottom var(--theme-delay) linear;
   z-index: 1;
